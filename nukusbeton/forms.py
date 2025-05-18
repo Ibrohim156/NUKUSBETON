@@ -9,7 +9,10 @@ class ContactForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ваше имя'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ваш номер телефона'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Ваш email'}),
+            'object_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Название объекта'}),
+            'project_location': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Местоположение проекта'}),
             'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Ваше сообщение'}),
         }
 

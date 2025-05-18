@@ -3,33 +3,16 @@ from django.utils.text import slugify
 
 class Brand(models.Model):
     brand_name = models.CharField(max_length=250, verbose_name="Каталог")
-    slug = models.SlugField(max_length=250, unique=True, blank=True)
 
     def __str__(self):
         return self.brand_name
 
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.brand_name)
-        super().save(*args, **kwargs)
+
     
     class Meta:
         verbose_name_plural = "Каталог"
 
-class Category(models.Model):
-    category_name = models.CharField(max_length=250, verbose_name="Название категории")
-    slug = models.SlugField(max_length=250, unique=True, blank=True)
 
-    def __str__(self):
-        return self.category_name
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.category_name)
-        super().save(*args, **kwargs)
-
-    class Meta:
-        verbose_name_plural = "Категории"   
 
 class Company(models.Model):
     city = models.TextField(verbose_name="Наш город")
@@ -49,7 +32,6 @@ class Company(models.Model):
 
 class Product(models.Model):
     product_name= models.CharField(max_length=250,verbose_name="Название продукта")
-    slug= models.SlugField(max_length=250, unique=True, blank=True)
     brand= models.ForeignKey(Brand, on_delete=models.CASCADE, verbose_name="Каталог")
     description= models.TextField(verbose_name="Описание")
     main_image= models.ImageField(upload_to='products/', verbose_name="Главное изображение")
@@ -65,27 +47,20 @@ class Product(models.Model):
     def __str__(self):
         return self.product_name
 
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.product_name)
-        super().save(*args, **kwargs)
+ 
 
     class Meta:
         verbose_name_plural = "Продукт"
 
 class Article(models.Model):
     title = models.CharField(max_length=255, verbose_name="Название статьи")
-    slug = models.SlugField(max_length=255, unique=True, blank=True)
     content = models.TextField(verbose_name="Содержимое статьи")
     image = models.ImageField(upload_to='articles/', verbose_name="Изображение статьи", blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     def __str__(self):
         return self.title
     
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.title)
-        super().save(*args, **kwargs)
+   
 
     class Meta:
         verbose_name_plural = "Статьи"
@@ -110,7 +85,7 @@ class Feedback(models.Model):
     message = models.TextField(verbose_name="Сообщение")
     object_name = models.CharField(max_length=255, verbose_name="Объект", blank=True, null=True)
     project_location = models.CharField(max_length=255, verbose_name="Местоположение проекта", blank=True, null=True)
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+    
 
     def __str__(self):
         return f"Сообщение от {self.email}"

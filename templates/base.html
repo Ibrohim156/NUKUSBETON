@@ -18,18 +18,26 @@
         <img src="{% static 'image/photo_2023-01-02_19-44-41.jpg' %}" alt="Logo" class="w-20 h-20" style="border-radius: 40px;">
         <span class="ml-3 text-2xl text-gray-200">NUKUS BETON</span>
       </a>
-      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+    <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+    <a href="{% url 'main' %}" class="mr-5 text-gray-400">Главная</a>
+    <a href="{% url 'company' %}" class="mr-5 text-gray-400">О компании</a>
+    <a href="{% url 'brands' %}" class="mr-5 text-gray-400">Продукты</a>
+    <a href="{% url 'article_list' %}" class="mr-5 text-gray-400">Статьи</a>
+    <a href="{% url 'contact' %}" class="mr-5 text-gray-400">Контакты</a>
+    </nav>
 
 
-        {% for i in categories %}
-        <a class="mr-5 hover:text-white" href="{% url 'category' i.slug %}">{{i.category_name}}</a>
-        {% endfor %}
+
+       
 
       </nav>
     </div>
   </header>
 
 
+<body>
+  {% block content %}{% endblock %}
+</body>
 
 
 
@@ -68,15 +76,17 @@
 
           </nav>
         <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <nav class="list-none mb-10">
-            {% for i in categories %}
-            <li>
-              <a class="text-gray-400 hover:text-white" href="{% url 'category' i.slug %}">{{i.category_name}}</a>
-            </li>
-            {% endfor %}
+    <nav class="mb-10">
+  <ul class="list-none">
+    <li class="mb-2"><a href="{% url 'main' %}" class="text-gray-400">Главная</a></li>
+    <li class="mb-2"><a href="{% url 'company' %}" class="text-gray-400">О компании</a></li>
+    <li class="mb-2"><a href="{% url 'brands' %}" class="text-gray-400">Продукты</a></li>
+    <li class="mb-2"><a href="{% url 'article_list' %}" class="text-gray-400">Статьи</a></li>
+    <li class="mb-2"><a href="{% url 'contact' %}" class="text-gray-400">Контакты</a></li>
+  </ul>
+    </nav>
 
 
-          </nav>
         </div>
         <div class="lg:w-1/4 md:w-1/2 w-full px-4">
           <nav class="list-none mb-10">
