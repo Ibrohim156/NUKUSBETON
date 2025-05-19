@@ -3,18 +3,39 @@ from . import models
 
 
 
-class ContactForm(forms.ModelForm):
+class FeedbackForm(forms.ModelForm):
     class Meta:
-        model = models.Contact
+        model = models.Feedback
         fields = '__all__'
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ваше имя'}),
-            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ваш номер телефона'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Ваш email'}),
-            'object_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Название объекта'}),
-            'project_location': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Местоположение проекта'}),
-            'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Ваше сообщение'}),
+            'name': forms.TextInput(attrs={
+                'class': 'w-full bg-gray-700 text-white rounded p-2 mt-1',
+                'placeholder': 'Ваше имя'
+            }),
+            'phone': forms.TextInput(attrs={
+                'class': 'w-full bg-gray-700 text-white rounded p-2 mt-1',
+                'placeholder': 'Ваш номер телефона'
+            }),
+            'email': forms.EmailInput(attrs={
+                'class': 'w-full bg-gray-700 text-white rounded p-2 mt-1',
+                'placeholder': 'Ваш email'
+            }),
+            'object_name': forms.TextInput(attrs={
+                'class': 'w-full bg-gray-700 text-white rounded p-2 mt-1',
+                'placeholder': 'Название объекта'
+            }),
+            'project_location': forms.TextInput(attrs={
+                'class': 'w-full bg-gray-700 text-white rounded p-2 mt-1',
+                'placeholder': 'Местоположение проекта'
+            }),
+            'message': forms.Textarea(attrs={
+                'class': 'w-full bg-gray-700 text-white rounded p-2 mt-1 resize-none h-24',
+                'placeholder': 'Ваше сообщение'
+            }),
         }
+
+
+
 
 
 class ProductForm(forms.ModelForm):

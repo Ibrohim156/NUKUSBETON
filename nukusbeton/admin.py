@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Brand, Company, Product, Article, Contact, Feedback
+from .models import Brand, Company, Product, Article,Feedback
 
 
 
@@ -23,9 +23,7 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'created_at')
     search_fields = ['title']
 
-@admin.register(Contact)
-class ContactAdmin(admin.ModelAdmin):
-    list_display = ('phone_number', 'email', 'address')
+
 
 @admin.register(Feedback)
 class FeedbackAdmin(admin.ModelAdmin):

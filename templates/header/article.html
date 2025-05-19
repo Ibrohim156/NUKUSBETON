@@ -1,1 +1,23 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block title %}Статья{% endblock %}
+
+{% block content %}
+
+<div class="bg-gray-900 min-h-screen py-12 px-4 sm:px-6 lg:px-8 space-y-12">
+  {% for article in articles %}
+  <section class="bg-gray-800 rounded-lg shadow-lg overflow-hidden w-full">
+    <div class="flex flex-col md:flex-row items-center max-w-7xl mx-auto px-5 py-12">
+      <div class="md:w-1/2 w-full mb-10 md:mb-0 flex justify-center">
+        <img class="object-cover object-center rounded" alt="{{ article.title }}" src="{{ article.image.url }}" style="width: 400px; height: 400px;">
+      </div>
+      <div class="md:w-1/2 w-full md:pl-16 text-center md:text-left">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-semibold text-white">{{ article.title }}</h1>
+        <p class="leading-relaxed text-gray-300 whitespace-pre-line">{{ article.content }}</p>
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+</div>
+
+{% endblock %}

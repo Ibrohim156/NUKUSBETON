@@ -66,17 +66,7 @@ class Article(models.Model):
         verbose_name_plural = "Статьи"
 
 
-class Contact(models.Model):
-    phone_number = models.CharField(max_length=20, verbose_name="Номер телефона")
-    map_photo = models.ImageField(upload_to='contacts/maps/', blank=True, null=True, verbose_name="Фото c карты")
-    email = models.EmailField()
-    address = models.CharField(max_length=255, verbose_name="Адрес")
 
-    def __str__(self):
-        return self.phone_number
-    
-    class Meta:
-        verbose_name_plural = "Контакты"
 
 class Feedback(models.Model):
     name = models.CharField(max_length=55, verbose_name="Ваше имя")

@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Product, Contact, Article,Company,Brand
+from .models import Product,Article,Company,Brand
 from . import forms
 
 
@@ -9,25 +9,20 @@ def main(request):
 
 
 
-
 def contactus(request):
     if request.method == 'POST':
-        form = forms.ContactForm(request.POST)
+        form = forms.FeedbackForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('main')
     else:
-        form = forms.ContactForm()
-        context = {
-            'form': form,
-        }
-        return render(request, 'header/contact.html', context)
+        form = forms.FeedbackForm()
 
-def contact(request):
-    form = Contact()
-    return render(request, 'header/contact.html', {
+    context = {
         'form': form,
-  })
+    }
+    return render(request, 'header/contact.html', context)
+
 
 
 
@@ -59,3 +54,4 @@ def company(request):
 def article_list(request):
     articles = Article.objects.all()
     return render(request, 'header/article.html', {'articles': articles})
+
