@@ -16,7 +16,7 @@
         <h2 class="text-xl font-medium title-font text-white mt-5">{{ product.product_name }}</h2>
         <p class="text-base leading-relaxed mt-2 text-gray-300">{{ product.description|truncatechars:100 }}</p>
         <p class="text-indigo-400 mt-2 font-bold">Цена: {{ product.price }} ₽</p>
-        <a class="text-indigo-400 inline-flex items-center mt-3" href="#">Подробнее
+        <a class="text-indigo-400 inline-flex items-center mt-3" href="{% url 'product_detail' product.brand.id product.id %}">Подробнее
           <svg fill="none" stroke="currentColor" stroke-linecap="round"
                stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2"
                viewBox="0 0 24 24">
