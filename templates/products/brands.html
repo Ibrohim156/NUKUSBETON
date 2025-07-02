@@ -5,96 +5,223 @@
 {% block content %}
 
 
-<section class="text-gray-400 bg-gray-900 body-font">
+<!-- <section class="text-gray-900 bg-white body-font">
   <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-col">
-    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-      <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
-        <div class="rounded-lg h-64 overflow-hidden">
-          <img alt="content" class="object-cover object-center h-full w-full" src="{% static 'image/contract.png' %}">
+    <div class="flex flex-wrap -m-4">
+  
+      <div class="p-4 md:w-1/3">
+        <div class="h-full border border-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{% static 'image/contract.png' %}" alt="content">
+          <div class="p-6">
+            <h2 class="title-font text-lg font-medium text-gray-900 mb-3">Договора</h2>
+            <p class="leading-relaxed mb-1">Договор на поставку товарного бетона</p>
+            <p class="leading-relaxed mb-3">Договор на поставку ЖБИ</p>
+            <a href="{% url 'documents' %}" class="text-blue-600 inline-flex items-center">Подробнее
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                   stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
         </div>
-        <h2 class="text-xl font-medium title-font text-white mt-5">Договора</h2>
-        <p class="text-base leading-relaxed mt-2">Договор на поставку товарного бетона</p>
-        <p class="text-base leading-relaxed mt-2">Договор на поставку ЖБИ</p>
-        <a class="text-indigo-400 inline-flex items-center mt-3" href="{% url 'documents' %}">Подробнее
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
       </div>
-      <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
-        <div class="rounded-lg h-64 overflow-hidden">
-          <img alt="content" class="object-cover object-center h-full w-full" src="{% static 'image/IMG_20230921_184052.jpg' %}">
+
+      <div class="p-4 md:w-1/3">
+        <div class="h-full border border-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{% static 'image/IMG_20230921_184052.jpg' %}" alt="content">
+          <div class="p-6">
+            <h2 class="title-font text-lg font-medium text-gray-900 mb-3">Фото и видео производства</h2>
+            <p class="leading-relaxed mb-3">Фотографии и видеоматериалы с производства, а также наше итальянское оборудование</p>
+            <a href="{% url 'media' %}" class="text-blue-600 inline-flex items-center">Подробнее
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                   stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
         </div>
-        <h2 class="text-xl font-medium title-font text-white mt-5">Фото и видео производства</h2>
-        <p class="text-base leading-relaxed mt-2">Фотографии и видеоматериалы с производства а также наше итальянское оборудование</p>
-        <a class="text-indigo-400 inline-flex items-center mt-3" href="{% url 'media' %}">Подробнее
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
       </div>
-      <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
-        <div class="rounded-lg h-64 overflow-hidden">
-          <img alt="content" class="object-cover object-center h-full w-full" src="{% static 'image/IMG_0977.jpg' %}">
+
+      <div class="p-4 md:w-1/3">
+        <div class="h-full border border-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{% static 'image/IMG_0977.jpg' %}" alt="content">
+          <div class="p-6">
+            <h2 class="title-font text-lg font-medium text-gray-900 mb-3">Плиты ПП</h2>
+            <p class="leading-relaxed mb-3">Плита перекрытия колодца — это железобетонное изделие, которое устанавливается на верхнюю часть колодца для защиты, прочности и установки люка. Используется в водопроводных, канализационных и дренажных системах.</p>
+            <a href="{% url 'product_list' 1 %}" class="text-blue-600 inline-flex items-center">Подробнее
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                   stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
         </div>
-        <h2 class="text-xl font-medium title-font text-white mt-5">Плиты ПП</h2>
-        <p class="text-base leading-relaxed mt-2">Плита перекрытия колодца — это железобетонное изделие, которое устанавливается на верхнюю часть колодца для защиты, прочности и установки люка. Используется в водопроводных, канализационных и дренажных системах.</p>
-        <a class="text-indigo-400 inline-flex items-center mt-3" href="{% url 'product_list' 1 %}">Подробнее
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
       </div>
+
+      <div class="p-4 md:w-1/3">
+        <div class="h-full border border-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{% static 'image/IMG_0546.jpg' %}" alt="content">
+          <div class="p-6">
+            <h2 class="title-font text-lg font-medium text-gray-900 mb-3">Плиты ПБ</h2>
+            <p class="leading-relaxed mb-3">Плиты ПБ — это предварительно напряжённые пустотные железобетонные плиты, предназначенные для устройства перекрытий в жилых, коммерческих и промышленных зданиях. Изготавливаются методом непрерывного формования и обладают высокой прочностью, геометрической точностью и длительным сроком службы.</p>
+            <a href="{% url 'product_list' 2 %}" class="text-blue-600 inline-flex items-center">Подробнее
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                   stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 md:w-1/3">
+        <div class="h-full border border-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{% static 'image/2020-09-17 18-26-41.jpg' %}" alt="content">
+          <div class="p-6">
+            <h2 class="title-font text-lg font-medium text-gray-900 mb-3">Колодцы</h2>
+            <p class="leading-relaxed mb-3">Колодцы — вертикальные шахты из бетонных колец или других материалов, предназначенные для доступа к подземным коммуникациям (водопровод, канализация, дренаж). Обеспечивают обслуживание, ремонт и защиту инженерных сетей.</p>
+            <a href="{% url 'product_list' 3 %}" class="text-blue-600 inline-flex items-center">Подробнее
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                   stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 md:w-1/3">
+        <div class="h-full border border-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{% static 'image/IMG_0650.JPG' %}" alt="content">
+          <div class="p-6">
+            <h2 class="title-font text-lg font-medium text-gray-900 mb-3">Лего блоки</h2>
+            <p class="leading-relaxed mb-3">Бетонные лего блоки — крупноформатные бетонные блоки с выступами и пазами для надежного соединения между собой, применяются для строительства стен и фундаментов. Обеспечивают прочность, устойчивость и облегчают монтаж благодаря системе «шип-паз».</p>
+            <a href="{% url 'product_list' 4 %}" class="text-blue-600 inline-flex items-center">Подробнее
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                   stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+ -->
+
+
+<section class="text-gray-900 bg-white body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap -m-4">
+
+      <div class="p-4 md:w-1/3">
+        <div class="h-full border border-gray-300 rounded-lg overflow-hidden shadow-lg">
+          <img class="lg:h-64 md:h-64 w-full object-cover object-center" src="{% static 'image/contract.png' %}" alt="Договора">
+          <div class="p-6">
+            <h2 class="title-font text-xl font-semibold text-gray-900 mb-3">Договора</h2>
+            <p class="leading-relaxed mb-4">
+              Ознакомьтесь с образцами договоров на поставку товарного бетона и железобетонных изделий. Документы составлены в соответствии с законодательством РФ и обеспечивают прозрачность условий сотрудничества.
+            </p>
+            <a href="{% url 'documents' %}" class="text-blue-600 inline-flex items-center">Подробнее
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 md:w-1/3">
+        <div class="h-full border border-gray-300 rounded-lg overflow-hidden shadow-lg">
+          <img class="lg:h-64 md:h-64 w-full object-cover object-center" src="{% static 'image/IMG_20230921_184052.jpg' %}" alt="Фото и видео">
+          <div class="p-6">
+            <h2 class="title-font text-xl font-semibold text-gray-900 mb-3">Фото и видео производства</h2>
+            <p class="leading-relaxed mb-4">
+              Ознакомьтесь с реальными фотографиями и видеоматериалами нашего производства. Демонстрируем весь процесс — от замешивания бетона до готовых изделий. В работе используем современное итальянское оборудование.
+            </p>
+            <a href="{% url 'media' %}" class="text-blue-600 inline-flex items-center">Подробнее
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 md:w-1/3">
+        <div class="h-full border border-gray-300 rounded-lg overflow-hidden shadow-lg">
+          <img class="lg:h-64 md:h-64 w-full object-cover object-center" src="{% static 'image/IMG_0977.jpg' %}" alt="Плиты ПП">
+          <div class="p-6">
+            <h2 class="title-font text-xl font-semibold text-gray-900 mb-3">Плиты ПП</h2>
+            <p class="leading-relaxed mb-4">
+              Плиты перекрытия колодца применяются в системах водоснабжения, канализации и дренажа. Обеспечивают прочность и возможность установки люка. Изготовлены из армированного бетона с высокой морозостойкостью и водонепроницаемостью.
+            </p>
+            <a href="{% url 'product_list' 1 %}" class="text-blue-600 inline-flex items-center">Подробнее
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 md:w-1/3">
+        <div class="h-full border border-gray-300 rounded-lg overflow-hidden shadow-lg">
+          <img class="lg:h-64 md:h-64 w-full object-cover object-center" src="{% static 'image/IMG_0546.jpg' %}" alt="Плиты ПБ">
+          <div class="p-6">
+            <h2 class="title-font text-xl font-semibold text-gray-900 mb-3">Плиты ПБ</h2>
+            <p class="leading-relaxed mb-4">
+              Предварительно напряжённые пустотные железобетонные плиты для строительства перекрытий в жилых и коммерческих зданиях. Обладают высокой прочностью, минимальной усадкой и точной геометрией. Производятся по современной технологии непрерывного формования.
+            </p>
+            <a href="{% url 'product_list' 2 %}" class="text-blue-600 inline-flex items-center">Подробнее
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 md:w-1/3">
+        <div class="h-full border border-gray-300 rounded-lg overflow-hidden shadow-lg">
+          <img class="lg:h-64 md:h-64 w-full object-cover object-center" src="{% static 'image/2020-09-17 18-26-41.jpg' %}" alt="Колодцы">
+          <div class="p-6">
+            <h2 class="title-font text-xl font-semibold text-gray-900 mb-3">Колодцы</h2>
+            <p class="leading-relaxed mb-4">
+              Колодцы из бетонных колец предназначены для обслуживания и защиты инженерных сетей. Применяются в системах водоснабжения, канализации, ливневой и дренажной канализации. Отличаются прочностью, долговечностью и герметичностью соединений.
+            </p>
+            <a href="{% url 'product_list' 3 %}" class="text-blue-600 inline-flex items-center">Подробнее
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 md:w-1/3">
+        <div class="h-full border border-gray-300 rounded-lg overflow-hidden shadow-lg">
+          <img class="lg:h-64 md:h-64 w-full object-cover object-center" src="{% static 'image/IMG_0650.JPG' %}" alt="Лего блоки">
+          <div class="p-6">
+            <h2 class="title-font text-xl font-semibold text-gray-900 mb-3">Лего блоки</h2>
+            <p class="leading-relaxed mb-4">
+              Крупноформатные бетонные блоки с системой «шип-паз». Применяются для быстрого возведения стен, ограждений и перегородок. Обладают высокой прочностью, устойчивостью к погодным условиям и простотой монтажа без раствора.
+            </p>
+            <a href="{% url 'product_list' 4 %}" class="text-blue-600 inline-flex items-center">Подробнее
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-
-
-<section class="text-gray-400 bg-gray-900 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-col">
-    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-      <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
-        <div class="rounded-lg h-64 overflow-hidden">
-          <img alt="content" class="object-cover object-center h-full w-full" src="{% static 'image/IMG_0546.jpg' %}">
-        </div>
-        <h2 class="text-xl font-medium title-font text-white mt-5">Плиты ПБ</h2>
-        <p class="text-base leading-relaxed mt-2">Плиты ПБ — это предварительно напряжённые пустотные железобетонные плиты, предназначенные для устройства перекрытий в жилых, коммерческих и промышленных зданиях. Изготавливаются методом непрерывного формования и обладают высокой прочностью, геометрической точностью и длительным сроком службы.</p>
-        <a class="text-indigo-400 inline-flex items-center mt-3" href="{% url 'product_list' 2 %}">Подробнее
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-      <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
-        <div class="rounded-lg h-64 overflow-hidden">
-          <img alt="content" class="object-cover object-center h-full w-full" src="{% static 'image/2020-09-17 18-26-41.jpg' %}">
-        </div>
-        <h2 class="text-xl font-medium title-font text-white mt-5">Колодцы</h2>
-        <p class="text-base leading-relaxed mt-2">Колодцы — вертикальные шахты из бетонных колец или других материалов, предназначенные для доступа к подземным коммуникациям (водопровод, канализация, дренаж). Обеспечивают обслуживание, ремонт и защиту инженерных сетей.</p>
-        <a class="text-indigo-400 inline-flex items-center mt-3" href="{% url 'product_list' 3 %}">Подробнее
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-      <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
-        <div class="rounded-lg h-64 overflow-hidden">
-          <img alt="content" class="object-cover object-center h-full w-full" src="{% static 'image/IMG_0650.JPG' %}">
-        </div>
-        <h2 class="text-xl font-medium title-font text-white mt-5">Лего блоки</h2>
-        <p class="text-base leading-relaxed mt-2">Бетонные лего блоки — крупноформатные бетонные блоки с выступами и пазами для надежного соединения между собой, применяются для строительства стен и фундаментов. Обеспечивают прочность, устойчивость и облегчают монтаж благодаря системе «шип-паз».</p>
-        <a class="text-indigo-400 inline-flex items-center mt-3" href="{% url 'product_list' 4 %}">Подробнее
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
 
 {% endblock %}
 

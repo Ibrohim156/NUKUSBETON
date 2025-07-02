@@ -3,26 +3,24 @@
 {% block title %}Договора{% endblock %}
 {% block content %}
 
-
 <div class=" bg-gray-900 py-10 px-4">
-    <div class="container mx-auto">
-        <h2 class="text-3xl text-white font-semibold mb-6">Документы</h2>
+  <div class="container mx-auto">
+    <h2 class="text-3xl text-white font-semibold mb-6">Документы</h2>
 
-        <div class="bg-gray-800 rounded-lg shadow p-6">
-            <p class="mb-4 text-gray-300">Скачать договоры:</p>
+    <div class="bg-gray-800 rounded-lg shadow p-6">
+      <p class="mb-4 text-gray-300">Скачать договоры:</p>
 
-            <ul class="list-disc pl-5 text-blue-400 space-y-2">
-                <li>
-                    <a href="{% static 'doc/contract1.pdf' %}" class="hover:underline" download>Договор на поставку товарного бетона </a>
-                </li>
-                <li>
-                    <a href="{% static 'doc/contract2.pdf' %}" class="hover:underline" download>Договор на поставку ЖБИ</a>
-                </li>
-                <li>
-                    <a href="{% static 'doc/contract3.pdf' %}" class="hover:underline" download>Договор </a>
-                </li>
-            </ul>
-        </div>
+      <ul class="list-disc pl-5 text-blue-400 space-y-2">
+        {% for doc in documents %}
+          <li>
+            <a href="{{ doc.file.url }}" class="hover:underline" download>{{ doc.title }}</a>
+          </li>
+        {% empty %}
+          <li class="text-gray-400">Договоры отсутствуют.</li>
+        {% endfor %}
+      </ul>
     </div>
+  </div>
 </div>
+
 {% endblock %}

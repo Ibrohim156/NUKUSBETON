@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Product,Article,Company,Brand
+from .models import Product,Article,Company,Brand,Document, ProductionPhoto, ProductionVideo
 from . import forms
 from django.templatetags.static import static
 
@@ -63,15 +63,16 @@ def article_list(request):
     articles = Article.objects.all()
     return render(request, 'header/article.html', {'articles': articles})
 
-def documents(request):
-    context = {
-        'document1_url': static('docs/contract1.pdf'),
-        'document2_url': static('docs/contract2.pdf'),
-        'document3_url': static('docs/contract3.pdf'),
-    }
-    return render(request, 'products/documents.html', context)
 
-def media(request):
-    return render(request, 'products/media.html', {
-        'media': static('media/'),
-    })
+
+
+
+def media_view(request):
+    photos = ProductionPhoto.objects.all()
+    videos = ProductionVideo.objects.all()
+    return render(request, 'products/media.html', {'photos': photos, 'videos': videos})
+
+
+def documents_view(request):
+    documents = Document.objects.all()
+    return render(request, 'products/documents.html', {'documents': documents})

@@ -1,2 +1,93 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block title %}{{ product.product_name }}{% endblock %}
+
+{% block content %}
+
+<section class="text-gray-900 bg-white body-font">
+  <div class="max-w-screen-xl mx-auto flex px-4 py-24 items-start justify-center flex-col lg:flex-row gap-12">
+    
+<div x-data="{
+  activeSlide: 0, 
+  images: [
+    '{{ product.main_image.url }}',
+    {% if product.image2 %}'{{ product.image2.url }}',{% endif %}
+    {% if product.image3 %}'{{ product.image3.url }}',{% endif %}
+    {% if product.image4 %}'{{ product.image4.url }}'{% endif %}
+  ].filter(Boolean)  /* удаляем пустые */
+}" class="w-full lg:w-1/2 relative">
+
+  <!-- Основное изображение -->
+  <div class="w-full h-[600px] overflow-hidden rounded-lg shadow-lg">
+    <img 
+      :src="images[activeSlide]" 
+      class="w-full h-full object-cover object-center transition-all duration-500">
+  </div>
+
+<!-- Стрелка влево -->
+<button 
+  @click="activeSlide = (activeSlide - 1 + images.length) % images.length"
+  class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full backdrop-blur-sm transition"
+  aria-label="Previous"
+>
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+  </svg>
+</button>
+
+<!-- Стрелка вправо -->
+<button 
+  @click="activeSlide = (activeSlide + 1) % images.length"
+  class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full backdrop-blur-sm transition"
+  aria-label="Next"
+>
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+  </svg>
+</button>
+
+
+  <!-- Индикаторы -->
+  <div class="flex justify-center mt-4 space-x-3">
+    <template x-for="(image, index) in images" :key="index">
+      <div 
+        @click="activeSlide = index"
+        :class="{'bg-indigo-500': index === activeSlide, 'bg-gray-300': index !== activeSlide}"
+        class="w-4 h-4 rounded-full cursor-pointer transition-colors shadow-md"></div>
+    </template>
+  </div>
+</div>
+
+
+
+
+    <!-- ИНФОРМАЦИЯ О ПРОДУКТЕ -->
+    <div class="w-full lg:w-1/2">
+      <h1 class="title-font text-4xl mb-4 font-bold text-gray-900">{{ product.product_name }}</h1>
+      <p class="mb-6 leading-relaxed text-lg text-gray-800">{{ product.description }}</p>
+      <p class="text-2xl font-semibold text-indigo-600 mb-6">Цена: {{ product.price }} сум</p>
+      <div class="flex gap-4">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,71 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Главная{% endblock %}
+
+{% block content %}
+
+
+<div class="bg-white text-dark py-10 px-4 ">
+  <div class="container mx-auto text-center max-w-4xl">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight ">
+      Добро пожаловать в 
+    </h1>
+    <h1 class="text-5xl md:text-6xl font-extrabold text-yellow-400 mb-6 leading-tight ">
+      NUKUS BETON
+    <p class="text-lg md:text-xl text-dark mb-4 py-8">
+      Надежные бетонные изделия — плиты перекрытия, кольца, бордюры, лего-блоки и многое другое. <br>
+      Всё для прочного и долговечного строительства.
+    </p>
+    <a href="{% url 'brands' %}" class="inline-block bg-yellow-400 hover:bg-yellow-700 text-white font-semibold text-lg py-3 px-8 rounded-lg shadow-lg transition duration-300">
+      Перейти к продукции
+    </a>
+  </div>
+</div>
+
+
+
+
+
+<div class="bg-white py-16 ">
+  <div class="container mx-auto max-w-6xl px-4">
+    <h2 class="text-3xl font-bold text-dark mb-12 text-center">Почему выбирают нас</h2>
+
+    <!-- Верхний ряд иконок -->
+    <div class="grid md:grid-cols-3 gap-8 text-center mb-12">
+      <div>
+        <div class="text-5xl mb-4">🏭</div>
+        <h3 class="text-lg font-semibold text-dark mb-2">Собственное производство</h3>
+        <p class="text-dark text-sm">Контроль качества на всех этапах.</p>
+      </div>
+      <div>
+        <div class="text-5xl mb-4">🚛</div>
+        <h3 class="text-lg font-semibold text-dark mb-2">Доставка по региону</h3>
+        <p class="text-dark text-sm">Быстрая и надежная логистика.</p>
+      </div>
+      <div>
+        <div class="text-5xl mb-4">💬</div>
+        <h3 class="text-lg font-semibold text-dark mb-2">Консультация и поддержка</h3>
+        <p class="text-dark text-sm">Всегда на связи с клиентом.</p>
+      </div>
+    </div>
+
+    <!-- Нижний ряд карточек -->
+    <div class="grid md:grid-cols-3 gap-8 text-gray-200">
+      <div class="bg-gray-700 rounded-xl p-6 shadow-md">
+        <h3 class="text-xl font-semibold mb-3 text-white">Современное оборудование</h3>
+        <p>Используем итальянское оборудование для точности и качества изделий.</p>
+      </div>
+      <div class="bg-gray-700 rounded-xl p-6 shadow-md">
+        <h3 class="text-xl font-semibold mb-3 text-white">Надёжность и качество</h3>
+        <p>Строгий контроль на всех этапах производства — прочность, долговечность, ГОСТ.</p>
+      </div>
+      <div class="bg-gray-700 rounded-xl p-6 shadow-md">
+        <h3 class="text-xl font-semibold mb-3 text-white">Опыт и доверие</h3>
+        <p>Работаем много лет на рынке Каракалпакстана, заслужили доверие партнёров и клиентов.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

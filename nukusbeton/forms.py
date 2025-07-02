@@ -9,27 +9,27 @@ class FeedbackForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'name': forms.TextInput(attrs={
-                'class': 'w-full bg-gray-700 text-white rounded p-2 mt-1',
+                'class': 'w-full bg-[#DDE6ED] text-white rounded p-2 mt-1',
                 'placeholder': 'Ваше имя'
             }),
             'phone': forms.TextInput(attrs={
-                'class': 'w-full bg-gray-700 text-white rounded p-2 mt-1',
+                'class': 'w-full bg-[#DDE6ED] text-white rounded p-2 mt-1',
                 'placeholder': 'Ваш номер телефона'
             }),
             'email': forms.EmailInput(attrs={
-                'class': 'w-full bg-gray-700 text-white rounded p-2 mt-1',
+                'class': 'w-full bg-[#DDE6ED] text-white rounded p-2 mt-1',
                 'placeholder': 'Ваш email'
             }),
             'object_name': forms.TextInput(attrs={
-                'class': 'w-full bg-gray-700 text-white rounded p-2 mt-1',
+                'class': 'w-full bg-[#DDE6ED] text-white rounded p-2 mt-1',
                 'placeholder': 'Название объекта'
             }),
             'project_location': forms.TextInput(attrs={
-                'class': 'w-full bg-gray-700 text-white rounded p-2 mt-1',
+                'class': 'w-full bg-[#DDE6ED] text-white rounded p-2 mt-1',
                 'placeholder': 'Местоположение проекта'
             }),
             'message': forms.Textarea(attrs={
-                'class': 'w-full bg-gray-700 text-white rounded p-2 mt-1 resize-none h-24',
+                'class': 'w-full bg-[#DDE6ED] text-white rounded p-2 mt-1 resize-none h-24',
                 'placeholder': 'Ваше сообщение'
             }),
         }

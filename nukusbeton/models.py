@@ -17,10 +17,6 @@ class Brand(models.Model):
 class Company(models.Model):
     city = models.TextField(verbose_name="Наш город")
     history = models.TextField(verbose_name="История компании")
-    catalog_xbik = models.FileField(upload_to='catalogs/', verbose_name="Каталог ЖБИ")
-    typical_contract = models.FileField(upload_to='contracts/', verbose_name="Типовой договор")
-    concrete_contract = models.FileField(upload_to='contracts/', verbose_name="Договор на поставку товарного бетона")
-    xbik_contract = models.FileField(upload_to='contracts/', verbose_name="Договор на поставку ЖБИ")
 
     def __str__(self):
         return "О компании"
@@ -42,7 +38,8 @@ class Product(models.Model):
     image4= models.ImageField(upload_to='products/',verbose_name="Дополнительное изображение 3",
                                 blank=True, null=True)
     pub_date= models.DateTimeField(auto_now_add=True,verbose_name="Дата публикации")
-    price= models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена")
+    # price= models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена")
+    price = models.IntegerField(verbose_name="Цена")
 
     def __str__(self):
         return self.product_name
@@ -54,9 +51,10 @@ class Product(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=255, verbose_name="Название статьи")
-    content = models.TextField(verbose_name="Содержимое статьи")
-    image = models.ImageField(upload_to='articles/', verbose_name="Изображение статьи", blank=True, null=True)
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+    # content = models.TextField(verbose_name="Содержимое статьи")
+    # image = models.ImageField(upload_to='articles/', verbose_name="Изображение статьи", blank=True, null=True)
+    # created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+    link = models.URLField(blank=True, null=True, verbose_name="Ссылка на статью")
     def __str__(self):
         return self.title
     
@@ -83,6 +81,36 @@ class Feedback(models.Model):
     class Meta:
         verbose_name_plural = "Обратная связь"
 
+
+class Document(models.Model):
+    title = models.CharField("Название договора", max_length=255)
+    file = models.FileField("Файл договора", upload_to='docs/')  # папка для хранения файлов
+
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name_plural = "Договоры"
+
+
+
+class ProductionPhoto(models.Model):
+    image = models.ImageField(upload_to='media/photos/')
+
+    def __str__(self):
+        return f'Фото {self.id}'
+    
+    class Meta:
+        verbose_name_plural = "Фото производства"
+
+
+class ProductionVideo(models.Model):
+    video = models.FileField(upload_to='media/videos/')
+
+    def __str__(self):
+        return f'Видео {self.id}'
+    
+    class Meta:
+        verbose_name_plural = "Видео производства"
 
 
 

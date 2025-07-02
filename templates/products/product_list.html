@@ -1,33 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Продукты{% endblock %}
-
 {% block content %}
-<section class="text-gray-400 bg-gray-900 body-font pt-12">
-  <div class="container px-5 mx-auto">
-    <div class="flex flex-wrap -m-4">
+
+<section class="text-gray-900 bg-white body-font">
+  <div class="max-w-screen-xl mx-auto px-0"> <!-- Контейнер без внутренних паддингов, максимальная ширина -->
+    <div class="flex flex-wrap -mx-4"> <!-- Отрицательные маргины для компенсации внутренних паддингов карточек -->
 
       {% for product in products %}
-      <div class="p-4 md:w-1/3 mb-6">
-        <div class="rounded-lg h-64 overflow-hidden">
+      <div class="w-full lg:w-1/3 px-4 mb-8"> <!-- Отступы по бокам только у карточек -->
+        <div class="bg-white border border-gray-300 rounded-lg overflow-hidden shadow-md w-full h-full flex flex-col">
           <img src="{{ product.main_image.url }}" alt="{{ product.product_name }}"
-               class="object-cover object-center h-full w-full">
+               class="w-full h-[400px] object-cover object-center flex-shrink-0"> <!-- Большая фотка -->
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-2xl font-bold text-dark mb-2">{{ product.product_name }}</h2>
+            <p class="text-base leading-relaxed text-dark mb-4 flex-grow">{{ product.description }}</p>
+            <p class="text-dark font-semibold text-lg mb-3">Цена: {{ product.price }} сум</p>
+            <a href="{% url 'product_detail' product.brand.id product.id %}" class="text-dark inline-flex items-center mt-auto">
+              Подробнее
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                   stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
         </div>
-        <h2 class="text-xl font-medium title-font text-white mt-5">{{ product.product_name }}</h2>
-        <p class="text-base leading-relaxed mt-2 text-gray-300">{{ product.description|truncatechars:100 }}</p>
-        <p class="text-indigo-400 mt-2 font-bold">Цена: {{ product.price }} ₽</p>
-        <a class="text-indigo-400 inline-flex items-center mt-3" href="{% url 'product_detail' product.brand.id product.id %}">Подробнее
-          <svg fill="none" stroke="currentColor" stroke-linecap="round"
-               stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2"
-               viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
       </div>
       {% endfor %}
 
     </div>
   </div>
 </section>
+
+
+
+
 {% endblock %}
 

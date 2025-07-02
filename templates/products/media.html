@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Фото и видео с производства{% endblock %}
+
+{% block content %}
+
+<section class="text-gray-800 bg-white body-font py-12">
+  <div class="container px-5 mx-auto">
+    <h1 class="text-3xl font-bold text-center mb-10">Фото и видео с производства</h1>
+
+    <!-- Фото -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+      {% for photo in photos %}
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <img src="{{ photo.image.url }}" alt="Производство фото" class="w-full h-64 object-cover object-center">
+          
+        </div>
+      {% endfor %}
+    </div>
+
+
+
+{% endfor %}
+</div>
+</div>
+</section>
+{% endblock %}
